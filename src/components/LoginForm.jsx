@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import "../styles/LoginForm.css";
 
 function LoginForm(props) {
   const [email, setEmail] = useState("");
@@ -17,20 +18,22 @@ function LoginForm(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
+          <form className="form-container" onSubmit={handleSubmit}>
+        <h2>Login</h2>
+        <div>
+         <label htmlFor="email">Email:</label>
+          <input
+          className="input-field"
           type="email"
           id="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-        />
+          />
       </div>
       <div>
         <label htmlFor="password">Password:</label>
         <input
+        className="input-field"
           type="password"
           id="password"
           value={password}
@@ -39,7 +42,7 @@ function LoginForm(props) {
       </div>
       <button type="submit">Login</button>
     </form>
-  );
+     );
 }
 
 LoginForm.propTypes = {

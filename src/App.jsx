@@ -4,6 +4,7 @@ import BookList from "./components/BookList";
 import BookForm from "./components/BookForm";
 import LoginForm from "./components/LoginForm";
 import RegistrationForm from "./components/RegistrationForm";
+import "./styles/App.css";
 
 function App() {
   const [books, setBooks] = useState([]);
