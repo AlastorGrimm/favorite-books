@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Header";
-import BookList from "./BookList";
-import BookForm from "./BookForm";
-import LoginForm from "./LoginForm";
-import RegistrationForm from "./RegistrationForm";
+import Header from "./components/Header";
+import BookList from "./components/BookList";
+import BookForm from "./components/BookForm";
+import LoginForm from "./components/LoginForm";
+import RegistrationForm from "./components/RegistrationForm";
 
 function App() {
   const [books, setBooks] = useState([]);
