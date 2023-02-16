@@ -78,7 +78,7 @@ function App() {
   
 
   return (
-    <div>
+    <div className="main-app">
       <Header
         user={user}
         onShowBookForm={() => setShowBookForm(true)}

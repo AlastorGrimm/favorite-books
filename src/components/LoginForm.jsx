@@ -32,9 +32,12 @@ function LoginForm(props) {
 //  }, [props]);
 
   return (
+    <div className="overlay">
+      
           <form className="form-container" ref={formRef} onSubmit={handleSubmit}>
-            <button className="close-button" onClick={props.onClose}>Close</button>
-        <h2>Login</h2>
+           
+            
+            <h2>Login</h2>
         
         <div>
          <label htmlFor="email">Email:</label>
@@ -45,7 +48,7 @@ function LoginForm(props) {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           />
-      </div>
+        </div>
       <div>
         <label htmlFor="password">Password:</label>
         <input
@@ -56,8 +59,11 @@ function LoginForm(props) {
           onChange={(event) => setPassword(event.target.value)}
         />
       </div>
+    
       <button type="submit">Login</button>
     </form>
+    <button className="close-button" onClick={props.onClose}>Close</button>
+    </div>
      );
 }
 
