@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import "../styles/LoginForm.css";
 
 function LoginForm(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const formRef = useRef();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -17,9 +18,24 @@ function LoginForm(props) {
     setPassword("");
   }
 
+  //useEffect(() => {
+    // function handleClickOutside(event) {
+ //  if (formRef.current && !formRef.current.contains(event.target)) {
+ //     props.onClose();
+ //     }
+ //   }
+
+ //   document.addEventListener("click", handleClickOutside);
+//    return () => {
+//      document.removeEventListener("click", handleClickOutside);
+//    };
+//  }, [props]);
+
   return (
-          <form className="form-container" onSubmit={handleSubmit}>
+          <form className="form-container" ref={formRef} onSubmit={handleSubmit}>
+            <button className="close-button" onClick={props.onClose}>Close</button>
         <h2>Login</h2>
+        
         <div>
          <label htmlFor="email">Email:</label>
           <input
@@ -47,6 +63,7 @@ function LoginForm(props) {
 
 LoginForm.propTypes = {
   onLogin: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default LoginForm;
